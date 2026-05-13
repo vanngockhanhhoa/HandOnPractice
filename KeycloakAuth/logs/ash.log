@@ -1,0 +1,175 @@
+2026-05-11 10:54:22,774 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.StartupInfoLogger: Starting AshApplication using Java 21.0.7 with PID 58378 (/Users/mac/IdeaProjects/ash/target/classes started by mac in /Users/mac/IdeaProjects/ash)
+2026-05-11 10:54:22,775 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2026-05-11 10:54:22,792 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: The Class-Path manifest attribute in /Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/ojdbc11-23.2.0.0.jar referenced one or more files that do not exist: file:/Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/oraclepki.jar
+2026-05-11 10:54:22,792 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11 10:54:22,792 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11 10:54:23,250 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-11 10:54:23,251 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11 10:54:23,301 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2026-05-11 10:54:23,307 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-11 10:54:23,307 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-11 10:54:23,313 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationExtensionSupport: Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.ash.repository.ICategoryRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-05-11 10:54:23,314 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationExtensionSupport: Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.ash.repository.IProductRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-05-11 10:54:23,314 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationExtensionSupport: Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.ash.repository.IUserRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-05-11 10:54:23,314 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2026-05-11 10:54:23,423 INFO  [restartedMain] [trace_id=, span_id=] o.s.c.c.s.GenericScope: BeanFactory id=5df5f0cd-553c-3f89-bf8f-54b4c5bcb289
+2026-05-11 10:54:23,711 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.e.t.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2026-05-11 10:54:23,718 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-11 10:54:23,718 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting service [Tomcat]
+2026-05-11 10:54:23,718 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-05-11 10:54:23,734 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2026-05-11 10:54:23,735 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 942 ms
+2026-05-11 10:54:23,845 ERROR [restartedMain] [trace_id=, span_id=] i.n.r.d.DnsServerAddressStreamProviders: Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-05-11 10:54:24,003 INFO  [restartedMain] [trace_id=, span_id=] o.h.j.i.u.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11 10:54:24,025 INFO  [restartedMain] [trace_id=, span_id=] o.h.Version: HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-05-11 10:54:24,037 INFO  [restartedMain] [trace_id=, span_id=] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2026-05-11 10:54:24,135 INFO  [restartedMain] [trace_id=, span_id=] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11 10:54:24,145 WARN  [restartedMain] [trace_id=, span_id=] c.z.h.HikariConfig: HikariPool-1 - keepaliveTime is greater than or equal to maxLifetime, disabling it.
+2026-05-11 10:54:24,145 WARN  [restartedMain] [trace_id=, span_id=] c.z.h.HikariConfig: HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2026-05-11 10:54:24,145 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Starting...
+2026-05-11 10:54:24,340 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.p.HikariPool: HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3f0dccd5
+2026-05-11 10:54:24,340 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Start completed.
+2026-05-11 10:54:24,404 WARN  [restartedMain] [trace_id=, span_id=] o.h.e.j.d.i.DialectFactoryImpl: HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11 10:54:24,438 INFO  [restartedMain] [trace_id=, span_id=] o.h.e.j.e.i.JdbcEnvironmentInitiator: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 23.26
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-11 10:54:24,773 INFO  [restartedMain] [trace_id=, span_id=] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11 10:54:24,881 INFO  [restartedMain] [trace_id=, span_id=] o.s.o.j.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11 10:54:25,126 INFO  [restartedMain] [trace_id=, span_id=] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer: Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-05-11 10:54:25,127 WARN  [restartedMain] [trace_id=, span_id=] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-11 10:54:25,137 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.j.r.q.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-11 10:54:25,609 WARN  [restartedMain] [trace_id=, span_id=] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11 10:54:25,781 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.a.e.w.EndpointLinksResolver: Exposing 1 endpoint beneath base path '/actuator'
+2026-05-11 10:54:26,530 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2026-05-11 10:54:26,605 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2026-05-11 10:54:26,609 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.e.t.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2026-05-11 10:54:26,622 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.StartupInfoLogger: Started AshApplication in 4.045 seconds (process running for 4.498)
+2026-05-11 10:54:26,627 INFO  [restartedMain] [trace_id=, span_id=] o.e.a.AshApplication: 
+----------------------------------
+	Application 'ash' is running! Access URLs: 
+	Local: 		http://localhost:8080/
+	External: 		http://127.0.0.1:8080/
+	Profile(s): 		[]
+	
+2026-05-11 10:54:27,035 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11 10:54:27,035 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.s.w.s.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2026-05-11 10:54:27,036 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.s.w.s.FrameworkServlet: Completed initialization in 1 ms
+2026-05-11 10:57:21,829 WARN  [HikariPool-1:housekeeper] [trace_id=, span_id=] c.z.h.p.HikariPool$HouseKeeper: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m57s375ms).
+2026-05-11 11:13:53,987 WARN  [HikariPool-1:housekeeper] [trace_id=, span_id=] c.z.h.p.HikariPool$HouseKeeper: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m2s138ms).
+2026-05-11 11:20:55,006 WARN  [HikariPool-1:housekeeper] [trace_id=, span_id=] c.z.h.p.HikariPool$HouseKeeper: HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m30s994ms).
+2026-05-11 14:04:00,227 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] o.s.b.w.e.t.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-11 14:04:00,233 INFO  [tomcat-shutdown] [trace_id=, span_id=] o.s.b.w.e.t.GracefulShutdown: Graceful shutdown complete
+2026-05-11 14:04:00,264 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] o.s.o.j.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11 14:04:00,268 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2026-05-11 14:04:00,290 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Shutdown completed.
+2026-05-11 14:04:23,079 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.StartupInfoLogger: Starting AshApplication using Java 21.0.7 with PID 7481 (/Users/mac/IdeaProjects/ash/target/classes started by mac in /Users/mac/IdeaProjects/ash)
+2026-05-11 14:04:23,080 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2026-05-11 14:04:23,096 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: The Class-Path manifest attribute in /Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/ojdbc11-23.2.0.0.jar referenced one or more files that do not exist: file:/Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/oraclepki.jar
+2026-05-11 14:04:23,097 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11 14:04:23,097 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11 14:04:23,156 WARN  [restartedMain] [trace_id=, span_id=] o.s.c.s.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [org.example.ash.mapper.CategoryMapperImpl]
+2026-05-11 14:04:23,168 ERROR [restartedMain] [trace_id=, span_id=] o.s.b.SpringApplication: Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [org.example.ash.mapper.CategoryMapperImpl]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:218)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:354)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.example.ash.AshApplication.main(AshApplication.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.io.FileNotFoundException: class path resource [org/example/ash/mapper/CategoryMapper.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:98)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:85)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:711)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:1060)
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:441)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:385)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281)
+	... 19 common frames omitted
+2026-05-11 14:04:35,883 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.StartupInfoLogger: Starting AshApplication using Java 21.0.7 with PID 7546 (/Users/mac/IdeaProjects/ash/target/classes started by mac in /Users/mac/IdeaProjects/ash)
+2026-05-11 14:04:35,884 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2026-05-11 14:04:35,898 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: The Class-Path manifest attribute in /Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/ojdbc11-23.2.0.0.jar referenced one or more files that do not exist: file:/Users/mac/.m2/repository/com/oracle/database/jdbc/ojdbc11/23.2.0.0/oraclepki.jar
+2026-05-11 14:04:35,899 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-11 14:04:35,899 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.l.LogLevel: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-11 14:04:36,328 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-11 14:04:36,329 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-11 14:04:36,406 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interface.
+2026-05-11 14:04:36,416 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-11 14:04:36,418 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-11 14:04:36,429 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationExtensionSupport: Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.example.ash.repository.IUserRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-05-11 14:04:36,429 INFO  [restartedMain] [trace_id=, span_id=] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2026-05-11 14:04:36,551 INFO  [restartedMain] [trace_id=, span_id=] o.s.c.c.s.GenericScope: BeanFactory id=a0e74dff-e5e4-3cee-be0f-6927681e0d6a
+2026-05-11 14:04:36,810 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.e.t.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2026-05-11 14:04:36,815 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-11 14:04:36,816 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting service [Tomcat]
+2026-05-11 14:04:36,816 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-05-11 14:04:36,831 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2026-05-11 14:04:36,831 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.s.c.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 932 ms
+2026-05-11 14:04:36,925 ERROR [restartedMain] [trace_id=, span_id=] i.n.r.d.DnsServerAddressStreamProviders: Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-05-11 14:04:37,077 INFO  [restartedMain] [trace_id=, span_id=] o.h.j.i.u.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-11 14:04:37,101 INFO  [restartedMain] [trace_id=, span_id=] o.h.Version: HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-05-11 14:04:37,113 INFO  [restartedMain] [trace_id=, span_id=] o.h.c.i.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2026-05-11 14:04:37,199 INFO  [restartedMain] [trace_id=, span_id=] o.s.o.j.p.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-11 14:04:37,209 WARN  [restartedMain] [trace_id=, span_id=] c.z.h.HikariConfig: HikariPool-1 - keepaliveTime is greater than or equal to maxLifetime, disabling it.
+2026-05-11 14:04:37,209 WARN  [restartedMain] [trace_id=, span_id=] c.z.h.HikariConfig: HikariPool-1 - idleTimeout is close to or more than maxLifetime, disabling it.
+2026-05-11 14:04:37,209 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Starting...
+2026-05-11 14:04:37,413 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.p.HikariPool: HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@68a00438
+2026-05-11 14:04:37,414 INFO  [restartedMain] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Start completed.
+2026-05-11 14:04:37,473 WARN  [restartedMain] [trace_id=, span_id=] o.h.e.j.d.i.DialectFactoryImpl: HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-11 14:04:37,509 INFO  [restartedMain] [trace_id=, span_id=] o.h.e.j.e.i.JdbcEnvironmentInitiator: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 23.26
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-11 14:04:37,810 INFO  [restartedMain] [trace_id=, span_id=] o.h.e.t.j.p.i.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-11 14:04:37,915 INFO  [restartedMain] [trace_id=, span_id=] o.s.o.j.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11 14:04:38,115 INFO  [restartedMain] [trace_id=, span_id=] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer: Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-05-11 14:04:38,116 WARN  [restartedMain] [trace_id=, span_id=] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-11 14:04:38,162 WARN  [restartedMain] [trace_id=, span_id=] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-11 14:04:38,316 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.a.e.w.EndpointLinksResolver: Exposing 1 endpoint beneath base path '/actuator'
+2026-05-11 14:04:39,034 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.d.a.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2026-05-11 14:04:39,104 INFO  [restartedMain] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2026-05-11 14:04:39,107 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.w.e.t.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2026-05-11 14:04:39,120 INFO  [restartedMain] [trace_id=, span_id=] o.s.b.StartupInfoLogger: Started AshApplication in 3.41 seconds (process running for 3.854)
+2026-05-11 14:04:39,123 INFO  [restartedMain] [trace_id=, span_id=] o.e.a.AshApplication: 
+----------------------------------
+	Application 'ash' is running! Access URLs: 
+	Local: 		http://localhost:8080/
+	External: 		http://127.0.0.1:8080/
+	Profile(s): 		[]
+	
+2026-05-11 14:04:39,226 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.a.j.l.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11 14:04:39,226 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.s.w.s.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2026-05-11 14:04:39,227 INFO  [RMI TCP Connection(1)-127.0.0.1] [trace_id=, span_id=] o.s.w.s.FrameworkServlet: Completed initialization in 1 ms
+2026-05-11 14:04:44,598 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] o.s.b.w.e.t.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-11 14:04:44,600 INFO  [tomcat-shutdown] [trace_id=, span_id=] o.s.b.w.e.t.GracefulShutdown: Graceful shutdown complete
+2026-05-11 14:04:44,613 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] o.s.o.j.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-11 14:04:44,615 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2026-05-11 14:04:44,628 INFO  [SpringApplicationShutdownHook] [trace_id=, span_id=] c.z.h.HikariDataSource: HikariPool-1 - Shutdown completed.

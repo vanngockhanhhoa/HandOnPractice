@@ -1,0 +1,139 @@
+services:
+
+  # ─── Oracle Free ───────────────────────────────────────────────────────────
+  oracle:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: ash-oracle
+    environment:
+      ORACLE_PWD: demo_pass             # SYS / SYSTEM / PDBADMIN password
+    ports:
+      - "1521:1521"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  # ─── Redis ─────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: ash-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Kafka (KRaft mode – no Zookeeper) ────────────────────────────────────
+  kafka:
+    image: apache/kafka:3.8.0
+    container_name: ash-kafka
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      # Two listeners:
+      #   PLAINTEXT  :9092  – advertised as localhost:9092  → Spring Boot app (host)
+      #   INTERNAL   :29092 – advertised as kafka:29092     → other containers (kafka-ui etc.)
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,INTERNAL://0.0.0.0:29092,CONTROLLER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,INTERNAL://kafka:29092
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # ─── Kafka UI ──────────────────────────────────────────────────────────────
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: ash-kafka-ui
+    ports:
+      - "8090:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: ash-kafka
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+  # ─── PostgreSQL (Keycloak) ─────────────────────────────────────────────────
+  keycloak-postgres:
+    image: postgres:16
+    container_name: ash-keycloak-postgres
+    environment:
+      POSTGRES_DB: keycloak_db
+      POSTGRES_USER: keycloak_user
+      POSTGRES_PASSWORD: keycloak_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - keycloak_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keycloak_user -d keycloak_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Keycloak ──────────────────────────────────────────────────────────────
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: ash-keycloak
+    command: start-dev --import-realm
+    environment:
+      # Database
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-postgres:5432/keycloak_db
+      KC_DB_USERNAME: keycloak_user
+      KC_DB_PASSWORD: keycloak_pass
+      # Admin console
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      # Hostname (dev mode – HTTP, no strict hostname check)
+      KC_HOSTNAME: localhost
+      KC_HOSTNAME_PORT: 8180
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
+      KC_HTTP_ENABLED: "true"
+    ports:
+      - "8180:8080"
+    volumes:
+      # Realm JSON is auto-imported on first boot via --import-realm
+      - ./src/main/resources/keycloak:/opt/keycloak/data/import
+    depends_on:
+      keycloak-postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/8080 && echo -e \"GET /realms/master HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n\" >&3 && cat <&3 | grep -q \"200 OK\"'"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    networks:
+      - ash-network
+
+volumes:
+  oracle_data:
+  redis_data:
+  kafka_data:
+  keycloak_postgres_data:
+
+networks:
+  ash-network:
+    name: ash-network   # Kong joins this network to reach keycloak:8080

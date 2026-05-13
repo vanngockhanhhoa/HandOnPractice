@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty scope="context" name="logFilePath" source="application.log.file-path" defaultValue="./logs" />
+    <springProperty scope="context" name="logFileCount" source="application.log.file-count" defaultValue="10" />
+    <springProperty scope="context" name="logFileName" source="spring.application.name" defaultValue="app" />
+
+    <springProfile name="!log-json">
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>
+                    <![CDATA[
+                %blue(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] [trace_id=%X{trace_id}, span_id=%X{span_id}] %yellow(%C{1}): %msg%n%red(%throwable)
+                    ]]>
+                </pattern>
+            </encoder>
+        </appender>
+
+        <appender name="FILE-PLAIN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${logFilePath}/${logFileName}.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logFilePath}/${logFileName}-%d{yyyy-MM-dd}.log</fileNamePattern>
+                <maxHistory>${logFileCount}</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>
+                    <![CDATA[
+                %d{ISO8601} %-5level [%t] [trace_id=%X{trace_id}, span_id=%X{span_id}] %C{1}: %msg%n%throwable
+                    ]]>
+                </pattern>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="FILE-PLAIN" />
+        </root>
+    </springProfile>
+
+    <springProfile name="log-json">
+        <appender name="CONSOLE-JSON" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        </appender>
+
+        <appender name="FILE-JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${logFilePath}/${logFileName}-json.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${logFilePath}/${logFileName}-%d{yyyy-MM-dd}-json.log</fileNamePattern>
+                <maxHistory>${logFileCount}</maxHistory>
+            </rollingPolicy>
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE-JSON" />
+            <appender-ref ref="FILE-JSON" />
+        </root>
+    </springProfile>
+</configuration>

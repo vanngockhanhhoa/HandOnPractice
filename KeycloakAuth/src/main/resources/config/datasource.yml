@@ -1,0 +1,27 @@
+# ─── Datasource connection properties ───────────────────────────────────────
+# Bound via @ConfigurationProperties in OracleJpaConfig / PostgresJpaConfig
+custom:
+  multi-databases:
+    oracle:
+      url: jdbc:oracle:thin:@localhost:1521/FREEPDB1
+      username: demo_user
+      password: demo_pass
+      driver-class-name: oracle.jdbc.OracleDriver
+    postgres:
+      url: jdbc:postgresql://localhost:5432/demo_db
+      username: demo_user
+      password: demo_pass
+      driver-class-name: org.postgresql.Driver
+
+# ─── HikariCP pool settings ──────────────────────────────────────────────────
+# Bound via OracleConnectionPoolConfig / PostgresConnectionPoolConfig
+datasource:
+  pool:
+    oracle:
+      connectionTimeout: 30000    # 30 s  – max wait to acquire a connection
+      idleTimeout: 600000         # 10 min – idle connection lifetime
+      maxLifeTime: 1800000        # 30 min – max connection lifetime
+    postgres:
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifeTime: 1800000

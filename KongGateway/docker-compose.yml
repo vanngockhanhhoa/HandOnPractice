@@ -1,0 +1,34 @@
+services:
+
+  # ─── Kong Gateway (DB-less) ───────────────────────────────────────────────
+  kong:
+    image: kong:3.7
+    container_name: ash-kong
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yml
+      KONG_PROXY_LISTEN: "0.0.0.0:8000"
+      KONG_ADMIN_LISTEN: "0.0.0.0:8001"
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+    ports:
+      - "8000:8000"   # proxy  – FE entry point
+      - "8001:8001"   # admin API
+    volumes:
+      - ./kong.yml:/kong/declarative/kong.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # reach Spring Boot app on the host (Linux compat)
+    networks:
+      - ash-network
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+networks:
+  ash-network:
+    external: true   # created by KeycloakAuth/docker-compose.yml

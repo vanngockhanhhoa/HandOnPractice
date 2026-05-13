@@ -1,0 +1,35 @@
+{
+  "realm": "ash",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": false,
+  "accessTokenLifespan": 86400,
+
+  "roles": {
+    "realm": [
+      { "name": "user",  "description": "Regular user"    },
+      { "name": "admin", "description": "Administrator"   }
+    ]
+  },
+
+  "clients": [
+    {
+      "clientId": "ash-mobile",
+      "name": "ASH Mobile Client",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"],
+      "protocol": "openid-connect",
+      "defaultClientScopes": [
+        "profile", "email", "roles", "web-origins"
+      ]
+    }
+  ]
+
+}

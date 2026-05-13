@@ -1,0 +1,4 @@
+${AnsiColor.BRIGHT_BLUE} ----------------------
+${AnsiColor.BRIGHT_BLUE} ----------------------
+${AnsiColor.BRIGHT_BLUE} ----------------------
+${AnsiColor.BRIGHT_BLUE}:: AshLynx :xnning Spring Boot ${spring-boot-version}
